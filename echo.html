@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Echo</title>
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+	<style>
+		#parent{
+			font-size: 250px;
+			text-align: center;
+			font-family: "Amatic SC", cursive;
+		}
+		div{
+			font-size: 0.99em;
+		}
+	</style>
+</head>
+<body>
+	<div id=parent>
+		<div id=child> </div>
+	<div>
+
+<script>
+// text = <div> echo <div> echo <div> echo </div> </div> </div>
+
+var text = "";
+
+//loop <div> hello
+for (var i = 0; i < 500; i++){
+	text = text + "<div>" + "echo"
+}
+
+// loop </div>
+for (var i = 0; i < 500; i++){
+	text = text + "</div>";
+}
+
+document.getElementById("child").innerHTML = text;
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
