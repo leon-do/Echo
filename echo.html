@@ -22,19 +22,19 @@
 <script>
 // text = <div> echo <div> echo <div> echo </div> </div> </div>
 
-var text = "";
+	var text = "";
 
 //loop <div> hello
-for (var i = 0; i < 500; i++){
+	for (var i = 0; i < 500; i++){
 	text = text + "<div>" + "echo"
-}
+	}
 
 // loop </div>
-for (var i = 0; i < 500; i++){
+	for (var i = 0; i < 500; i++){
 	text = text + "</div>";
 }
 
-document.getElementById("child").innerHTML = text;
+	document.getElementById("child").innerHTML = text;
 
 
 
@@ -42,48 +42,48 @@ document.getElementById("child").innerHTML = text;
 
 
 // when user scrolls, go to getCoordinates
-		window.addEventListener("scroll", getCoordinates);
+	window.addEventListener("scroll", getCoordinates);
 
 // get coordinates
-		var yArray = [0,0]; 				//blank array to add y axis values
-		function getCoordinates(){
-		    var y = window.pageYOffset; 	//get y axis values
+	var yArray = [0,0]; 				//blank array to add y axis values
+	function getCoordinates(){
+	    var y = window.pageYOffset; 	//get y axis values
 
-			yArray.splice(0,0,y); 			// adds coordinates to Array
-			yArray.splice(2,1);   			// removes old coordinates
+		yArray.splice(0,0,y); 			// adds coordinates to Array
+		yArray.splice(2,1);   			// removes old coordinates
 
-		    upOrDown(yArray)				//the checking function
-		}
+	    upOrDown(yArray)				//the checking function
+	}
 
 // see if user scrolls up or down
-		function upOrDown(yArray){
-			var currentY = yArray[0];
-			var previousY = yArray[1];
+	function upOrDown(yArray){
+		var currentY = yArray[0];
+		var previousY = yArray[1];
 
-			if (currentY > previousY){
-				scrollDown(); 				//scroll down function
+		if (currentY > previousY){
+			scrollDown(); 				//scroll down function
 
-			} else if (currentY < previousY){
-							//user is scrolling up
-				scrollUp(); 				//scroll up function
-			}
+		} else if (currentY < previousY){
+						//user is scrolling up
+			scrollUp(); 				//scroll up function
 		}
+	}
 
 
 // action(s) when user scrolls down
-		function scrollDown(){				
-			console.log("down")
-			window.scrollBy(0, 5);
-		}
+	function scrollDown(){				
+		console.log("down")
+		window.scrollBy(0, 5);
+	}
 
 
 
 
 // action(s) when user scrolls up
-		function scrollUp(){				
-			console.log("up")
-			window.scrollBy(0, -5);
-		}
+	function scrollUp(){				
+		console.log("up")
+		window.scrollBy(0, -5);
+	}
 
 </script>
 </body>
